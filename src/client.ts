@@ -491,7 +491,7 @@ export default class Client {
     );
     const requestInit: RequestInit = {
       body: `<?xml version="1.0"?>
-            <d:propfind  xmlns:d="DAV:" xmlns:oc="http://owncloud.org/ns"  xmlns:nc="http://nextcloud.org/ns">
+            <d:propfind  xmlns:d="DAV:" xmlns:oc="http://owncloud.org/ns" xmlns:nc="http://nextcloud.org/ns">
               <d:prop>
                 <oc:id />
                 <oc:display-name />
@@ -543,7 +543,7 @@ export default class Client {
 
     const requestInit: RequestInit = {
       body: `<?xml version="1.0"?>
-            <d:propfind  xmlns:d="DAV:" xmlns:oc="http://owncloud.org/ns"  xmlns:nc="http://nextcloud.org/ns">
+            <d:propfind  xmlns:d="DAV:" xmlns:oc="http://owncloud.org/ns" xmlns:nc="http://nextcloud.org/ns">
               <d:prop>
                 <oc:id />
                 <oc:display-name />
@@ -608,7 +608,7 @@ export default class Client {
 
     const requestInit: RequestInit = {
       body: `
-            <d:propfind  xmlns:d="DAV:" xmlns:oc="http://owncloud.org/ns"  xmlns:nc="http://nextcloud.org/ns" xmlns:nc="http://nextcloud.org/ns">
+            <d:propfind  xmlns:d="DAV:" xmlns:oc="http://owncloud.org/ns" xmlns:nc="http://nextcloud.org/ns">
               <d:prop>
                   <oc:fileid />
               </d:prop>
@@ -645,7 +645,7 @@ export default class Client {
 
     const requestInit: RequestInit = {
       body: `<?xml version="1.0"?>
-            <d:propfind  xmlns:d="DAV:" xmlns:oc="http://owncloud.org/ns"  xmlns:nc="http://nextcloud.org/ns" xmlns:ocs="http://open-collaboration-services.org/ns">
+            <d:propfind  xmlns:d="DAV:" xmlns:oc="http://owncloud.org/ns" xmlns:nc="http://nextcloud.org/ns" xmlns:ocs="http://open-collaboration-services.org/ns">
               <d:prop>
                 <d:getlastmodified />
                 <d:getetag />
@@ -3624,7 +3624,7 @@ export default class Client {
 
     const requestInit: RequestInit = {
       body: `<?xml version="1.0"?>
-            <d:propfind  xmlns:d="DAV:" xmlns:oc="http://owncloud.org/ns"  xmlns:nc="http://nextcloud.org/ns" xmlns:nc="http://nextcloud.org/ns">
+            <d:propfind  xmlns:d="DAV:" xmlns:oc="http://owncloud.org/ns" xmlns:nc="http://nextcloud.org/ns">
             <d:prop>
                   <d:getlastmodified />
                   <d:getetag />
