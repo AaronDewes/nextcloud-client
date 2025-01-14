@@ -26,7 +26,7 @@ node.js apppliactions.
 
 ```typescript
 // typescript
-import Client, { File, Folder, Share, Tag } from "nextcloud-node-client";
+import Client, { File, Folder, Share, Tag } from "jsr:@aarondewes/nextcloud-client";
 
 (async () => {
   try {
@@ -123,13 +123,13 @@ Creating a nextcloud client
 
 ```typescript
 // uses the environment to initialize
-import Client from "nextcloud-node-client";
+import Client from "jsr:@aarondewes/nextcloud-client";
 const client = new Client();
 ```
 
 ```typescript
 // uses explicite credentials
-import Client, { Server } from "nextcloud-node-client";
+import Client, { Server } from "jsr:@aarondewes/nextcloud-client";
 const server: Server = new Server(
   {
     basicAuth: { password: "<your password>", username: "<your user name>" },
@@ -383,7 +383,7 @@ for access.
 
 ```typescript
 // typescript
-import Client, { User, UserGroup } from "nextcloud-node-client";
+import Client, { User, UserGroup } from "jsr:@aarondewes/nextcloud-client";
 
 (async () => {
   try {
@@ -470,7 +470,7 @@ import Client, {
   Folder,
   Share,
   Tag,
-} from "nextcloud-node-client";
+} from "jsr:@aarondewes/nextcloud-client";
 
 (async () => {
   try {
