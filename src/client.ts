@@ -675,13 +675,15 @@ export default class Client {
     ], { description: "Folder get contents" });
     const folderContents: any[] = [];
 
-    const schema: Joi.ObjectSchema = Joi.object({
-      _href: Joi.string().required(),
-      getlastmodified: Joi.string().required(),
-      fileid: Joi.number().integer().required(),
-      getcontenttype: Joi.string(),
-      getcontentlength: Joi.number().integer(),
-    });
+    const schema = Joi.array().items(
+      Joi.object({
+        _href: Joi.string().required(),
+        getlastmodified: Joi.string().required(),
+        fileid: Joi.number().integer().required(),
+        getcontenttype: Joi.string(),
+        getcontentlength: Joi.number().integer(),
+      }).unknown(true),
+    );
 
     const properties: any[] = await this
       .getPropertiesFromWebDAVMultistatusResponse(response, "");
