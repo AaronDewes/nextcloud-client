@@ -90,10 +90,10 @@ export default class RequestResponseLog {
 
   private xmlToJson(xml: string): any {
     const parser = new XMLParser({ removeNSPrefix: true });
-      if (XMLValidator.validate(xml) === true) {
-          return parser.parse(xml);
-      }
-      return { info: "invalid xml" };
+    if (XMLValidator.validate(xml) === true) {
+      return parser.parse(xml);
+    }
+    return { info: "invalid xml" };
   }
 
   private async assertDirectory(filename: string): Promise<void> {
