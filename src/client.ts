@@ -3641,8 +3641,7 @@ export default class Client {
                   <oc:share-types />
             </d:prop>
           </d:propfind>`,
-      // headers: new Headers({ Depth: "0" }),
-      headers: new Headers(),
+      headers: new Headers({ Depth: "0" }),
       method: "PROPFIND",
     };
     let response: Response;
