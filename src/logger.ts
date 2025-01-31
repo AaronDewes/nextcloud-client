@@ -37,75 +37,67 @@ export default class Logger {
     }
 
     this.logger = new TSLogLogger({ minLevel });
-    // overload is required to get the real position for logging
-    this.silly = this.logger.silly.bind(this.logger);
-    this.trace = this.logger.trace.bind(this.logger);
-    this.debug = this.logger.debug.bind(this.logger);
-    this.info = this.logger.info.bind(this.logger);
-    this.warn = this.logger.warn.bind(this.logger);
-    this.error = this.logger.error.bind(this.logger);
-    this.fatal = this.logger.fatal.bind(this.logger);
   }
 
   /**
    * Logs a silly message.
    * @param args  - Multiple log attributes that should be logged out.
    */
-  public silly(...args: unknown[]): LogObject | undefined {
+  public silly(...args: unknown[]) {
     /* istanbul ignore next */
-    return this.logger.silly(...args);
+    console.log(...args);
   }
 
   /**
    * Logs a trace message.
    * @param args  - Multiple log attributes that should be logged out.
    */
-  public trace(...args: unknown[]): LogObject | undefined {
+  public trace(...args: unknown[]) {
     /* istanbul ignore next */
-    return this.logger.trace(...args);
+    console.log(...args);
   }
 
   /**
    * Logs a debug message.
    * @param args  - Multiple log attributes that should be logged out.
    */
-  public debug(...args: unknown[]): LogObject | undefined {
-    return this.logger.debug(...args);
+  public debug(...args: unknown[]) {
+    console.log(...args);
   }
 
   /**
    * Logs a info message.
    * @param args  - Multiple log attributes that should be logged out.
    */
-  public info(...args: unknown[]): LogObject | undefined {
+  public info(...args: unknown[]) {
     /* istanbul ignore next */
-    return this.logger.info(...args);
+    console.log(...args);
   }
 
   /**
    * Logs a warn message.
    * @param args  - Multiple log attributes that should be logged out.
    */
-  public warn(...args: unknown[]): LogObject | undefined {
+  public warn(...args: unknown[]) {
     /* istanbul ignore next */
-    return this.logger.warn(...args);
+    console.log(...args);
   }
 
   /**
    * Logs a error message.
    * @param args  - Multiple log attributes that should be logged out.
    */
-  public error(...args: unknown[]): LogObject | undefined {
+  public error(...args: unknown[]) {
     /* istanbul ignore next */
-    return this.logger.error(...args);
+    console.log(...args);
   }
 
   /**
    * Logs a fatal message.
    * @param args  - Multiple log attributes that should be logged out.
    */
-  public fatal(...args: unknown[]): LogObject | undefined {
+  public fatal(...args: unknown[]) {
     /* istanbul ignore next */
-    return this.logger.fatal(...args);
+    console.log(...args);
   }
 }
