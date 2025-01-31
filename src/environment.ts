@@ -3,7 +3,7 @@ import process from "node:process";
 
 export default class Environment {
   public static getMinLogLevel(): string {
-    return process.env.MIN_LOG_LEVEL || "error";
+    return process.env.MIN_LOG_LEVEL || "silly";
   }
 
   public static getNextcloudUrl(): string {

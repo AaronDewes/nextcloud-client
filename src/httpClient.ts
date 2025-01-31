@@ -80,6 +80,8 @@ export class HttpClient {
         },
       );
     }
+    log.debug(response.headers);
+    console.log(response.headers);
     return response;
   }
 }
