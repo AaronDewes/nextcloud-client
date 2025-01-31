@@ -1,43 +1,41 @@
 import Environment from "./environment.ts";
 import {
-  type ILogObject as LogObject,
+  type ILogObj as LogObject,
   Logger as TSLogLogger,
-  type TLogLevelName,
 } from "tslog";
 
 export default class Logger {
-  private logger: TSLogLogger;
+  private logger: TSLogLogger<LogObject>;
 
   public constructor() {
-    let minLevel: TLogLevelName;
+    let minLevel: number;
 
     switch (Environment.getMinLogLevel()) {
       case "silly":
-        minLevel = "silly";
+        minLevel = 0;
         break;
       case "trace":
-        minLevel = "trace";
+        minLevel = 1;
         break;
       case "debug":
-        minLevel = "debug";
+        minLevel = 2;
         break;
       case "info":
-        minLevel = "info";
+        minLevel = 3;
         break;
       case "warn":
-        minLevel = "warn";
+        minLevel = 4;
         break;
       case "error":
-        minLevel = "error";
+        minLevel = 5;
         break;
       case "fatal":
-        minLevel = "fatal";
+        minLevel = 6;
         break;
       default:
-        minLevel = "error";
+        minLevel = 5;
     }
 
-    minLevel = "error";
     this.logger = new TSLogLogger({ minLevel });
     // overload is required to get the real position for logging
     this.silly = this.logger.silly.bind(this.logger);
@@ -53,7 +51,7 @@ export default class Logger {
    * Logs a silly message.
    * @param args  - Multiple log attributes that should be logged out.
    */
-  public silly(...args: unknown[]): LogObject {
+  public silly(...args: unknown[]): LogObject | undefined {
     /* istanbul ignore next */
     return this.logger.silly(...args);
   }
@@ -62,7 +60,7 @@ export default class Logger {
    * Logs a trace message.
    * @param args  - Multiple log attributes that should be logged out.
    */
-  public trace(...args: unknown[]): LogObject {
+  public trace(...args: unknown[]): LogObject | undefined {
     /* istanbul ignore next */
     return this.logger.trace(...args);
   }
@@ -71,7 +69,7 @@ export default class Logger {
    * Logs a debug message.
    * @param args  - Multiple log attributes that should be logged out.
    */
-  public debug(...args: unknown[]): LogObject {
+  public debug(...args: unknown[]): LogObject | undefined {
     return this.logger.debug(...args);
   }
 
@@ -79,7 +77,7 @@ export default class Logger {
    * Logs a info message.
    * @param args  - Multiple log attributes that should be logged out.
    */
-  public info(...args: unknown[]): LogObject {
+  public info(...args: unknown[]): LogObject | undefined {
     /* istanbul ignore next */
     return this.logger.info(...args);
   }
@@ -88,7 +86,7 @@ export default class Logger {
    * Logs a warn message.
    * @param args  - Multiple log attributes that should be logged out.
    */
-  public warn(...args: unknown[]): LogObject {
+  public warn(...args: unknown[]): LogObject | undefined {
     /* istanbul ignore next */
     return this.logger.warn(...args);
   }
@@ -97,7 +95,7 @@ export default class Logger {
    * Logs a error message.
    * @param args  - Multiple log attributes that should be logged out.
    */
-  public error(...args: unknown[]): LogObject {
+  public error(...args: unknown[]): LogObject | undefined {
     /* istanbul ignore next */
     return this.logger.error(...args);
   }
@@ -106,7 +104,7 @@ export default class Logger {
    * Logs a fatal message.
    * @param args  - Multiple log attributes that should be logged out.
    */
-  public fatal(...args: unknown[]): LogObject {
+  public fatal(...args: unknown[]): LogObject | undefined {
     /* istanbul ignore next */
     return this.logger.fatal(...args);
   }
