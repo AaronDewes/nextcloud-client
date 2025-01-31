@@ -1,10 +1,9 @@
 {
     "name": "@aarondewes/nextcloud-client",
-    "version": "0.1.5",
+    "version": "0.2.0",
     "exports": "./src/client.ts",
     "imports": {
         "debug": "npm:debug@^4.4.0",
-        "dotenv": "npm:dotenv@^16.4.7",
         "fast-xml-parser": "npm:fast-xml-parser@^4.5.1",
         "joi": "npm:joi@^17.13.3",
         "tslog": "npm:tslog@^2.12.0",

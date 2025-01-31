@@ -1,6 +1,3 @@
-import dotenv from "dotenv";
-dotenv.config();
-
 import ClientError from "./error.ts";
 import Server from "./server.ts";
 export { Server };

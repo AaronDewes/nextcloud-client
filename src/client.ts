@@ -1,8 +1,6 @@
 // deno-lint-ignore-file no-explicit-any
 /* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access */
 
-import { config } from "dotenv";
-config();
 import Joi from "joi";
 import UploadFilesCommand, {
   type SourceTargetFileNames,

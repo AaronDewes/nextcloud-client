@@ -2,7 +2,6 @@
   "version": "4",
   "specifiers": {
     "npm:debug@^4.4.0": "4.4.0",
-    "npm:dotenv@^16.4.7": "16.4.7",
     "npm:fast-xml-parser@^4.5.1": "4.5.1",
     "npm:joi@^17.13.3": "17.13.3",
     "npm:tslog@^2.12.0": "2.12.0",
@@ -38,9 +37,6 @@
       "dependencies": [
         "ms"
       ]
-    },
-    "dotenv@16.4.7": {
-      "integrity": "sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ=="
     },
     "fast-xml-parser@4.5.1": {
       "integrity": "sha512-y655CeyUQ+jj7KBbYMc4FG01V8ZQqjN+gDYGJ50RtfsUB8iG9AmwmwoAgeKLJdmueKKMrH1RJ7yXHTSoczdv5w==",
@@ -93,7 +89,6 @@
   "workspace": {
     "dependencies": [
       "npm:debug@^4.4.0",
-      "npm:dotenv@^16.4.7",
       "npm:fast-xml-parser@^4.5.1",
       "npm:joi@^17.13.3",
       "npm:tslog@^2.12.0",
