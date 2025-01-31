@@ -146,6 +146,16 @@ export default class File implements FileSystemElement {
     this.assertExistence();
     return this.client.getContent(this.name);
   }
+  
+  /**
+   * @returns A thumbnail of the file, if the file is an image, compressed by cloudflare workers
+   * 
+   * Note: This method will just return the file contents outside of CF Workers
+   */
+  public cfWorkersGetThumbnail(width: number, height: number): Promise<Buffer> {
+    this.assertExistence();
+    return this.client.cfWorkersGetThumbnail(this.name, width, height);
+  }
 
   /**
    * @returns the url of the file

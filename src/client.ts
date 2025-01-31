@@ -1219,6 +1219,35 @@ export default class Client {
     return Buffer.from(await response.arrayBuffer());
   }
 
+  public async cfWorkersGetThumbnail(fileName: string, width: number, height: number): Promise<Buffer> {
+    const url = this.webDAVUrl + fileName;
+    log.debug("getContent GET ", url);
+    const requestInit: RequestInit & { cf?: any } = {
+      method: "GET",
+      cf: {
+        image: {
+          anim: false,
+          format: "webp",
+          quality: 100,
+          width,
+          height,
+          fit: "scale-down",
+        }
+      }
+    };
+    let response: Response;
+    try {
+      response = await this.getHttpResponse(url, requestInit, [200], {
+        description: "File get content",
+      });
+    } catch (err: any) {
+      log.debug(`Error getContent ${url} - error ${err.message as string}`);
+      throw err;
+    }
+
+    return Buffer.from(await response.arrayBuffer());
+  }
+
   /**
    * returns the content of a file
    *
