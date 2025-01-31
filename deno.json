@@ -1,6 +1,6 @@
 {
     "name": "@aarondewes/nextcloud-client",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "exports": "./src/client.ts",
     "imports": {
         "debug": "npm:debug@^4.4.0",
